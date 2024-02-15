@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/fullpage.css">
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/fullpage.min.js"></script>
+    <script lang="java">
+        $(function () {
+            $("#fullpage").fullpage({
+                navigation: true,
+                afterLoad : function(index){
+                    var n = index.index;
+                    console.log("n : " , n);
+                    if( n != 0){
+                        ani();
+                        $(".progressvbar1").addClass("on")
+                        $(".progressvbar2").addClass("on")
+                        $(".progressvbar3").addClass("on")
+                    } else{
+                        $(".progressvbar1").removeClass("on")
+                        $(".progressvbar2").removeClass("on")
+                        $(".progressvbar3").removeClass("on")
+                    }//if
+                }//
+            }) //fullpage
+            
+            
+            function ani(){
+
+                $({val:0}).animate({val:100}, {duration:3000,step:function(){
+                    $(".progress1").text( Math.floor(this.val))
+                } ,
+                complete:function(){
+                    $(".progress1").text( Math.floor(this.val));
+                    $(".progress1").css({color: "#ff0"})
+                }
+                })//
+
+                $({val:0}).animate({val:80}, {duration:3000,step:function(){
+                    $(".progress2").text( Math.floor(this.val))
+                } ,
+                complete:function(){
+                    $(".progress2").text( Math.floor(this.val));
+                    $(".progress2").css({color: "#f00"})
+                }
+                })//
+
+                $({val:0}).animate({val:55}, {duration:3000,step:function(){
+                    $(".progress3").text( Math.floor(this.val))
+                } ,
+                complete:function(){
+                    $(".progress3").text( Math.floor(this.val));
+                    $(".progress3").css({color: "#ff0"})
+                }
+                })//
+
+
+
+
+
+
+            }//fun ani
+
+
+
+        }) //jquery
+    </script>
+
+    <style type="text/css">
+        body{
+            background-color: #222;
+            color: white;
+        }
+        #section1,
+        #section2 {
+            text-align: center;
+            font-size: 10vw;            
+        }
+
+        .progressvbar {
+            width: 1000px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: #ccc;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progressvbar::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 50px;            
+        }
+
+        .progress{
+            position: absolute;
+            top: 50%;right: 10px;
+            transform: translateY(-50%);
+            z-index: 100;
+        }
+
+        .progress::after{
+            content: " %";
+        }
+
+        .progressvbar1::after{background-color: red;}
+        .progressvbar2::after{background-color: green}
+        .progressvbar3::after{background-color: blue}
+
+        .progressvbar1.on::after{animation: bar1 5s ease forwards;}
+        .progressvbar2.on::after{animation: bar2 5s ease forwards 0.5s;}
+        .progressvbar3.on::after{animation: bar3 5s ease forwards 1s;}
+
+        @keyframes bar1{
+            0%{width: 0;}
+            100%{width: 100%;}
+        }
+
+        @keyframes bar2{
+            0%{width: 0;}
+            100%{width: 80%;}
+        }
+
+        @keyframes bar3{
+            0%{width: 0;}
+            100%{width: 55%;}
+        }
+
+
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="fullpage">
+        <section class="section" id="section1"> section1 </section>
+        <section class="section" id="section2"> section2 </section>
+
+        <section class="section" id="section3">
+
+            <div class="progressvbar progressvbar1">
+                <span class="progress progress1">0</span>
+            </div>
+
+            <div class="progressvbar progressvbar2">
+                <span class="progress progress2">0</span>
+            </div>
+
+            <div class="progressvbar progressvbar3">
+                <span class="progress progress3">0</span>
+            </div>
+
+        </section><!-- fullpage -->
+
+    </div><!-- fullpage -->
+
+</body>
+
+</html>
