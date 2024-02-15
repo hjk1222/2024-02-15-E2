@@ -1,0 +1,336 @@
+@charset "utf-8";
+*{padding: 0; margin: 0; box-sizing: border-box;}
+a{text-decoration: none; color: inherit;}
+ul,li{list-style: none;}
+html,body{width: 100%; height: 100%;}
+body{
+    font-size: 14px;
+    color: #333;
+    font-family: "굴림";
+    background-color: white;
+}
+
+#wrap{
+    width: 100%;
+    height: 700px;
+}
+
+.up{
+    width: 100%;
+    height: 600px;
+    /* background-color: #e9e5e5; */
+    display: flex;
+}
+.header{
+    width: 200px;
+    height: 600px;
+    /* background-color: #f1e3e3; */
+}
+.logo{
+    width: 200px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo{}
+
+.logo a{}
+
+.logo h1 a img{width: 195px;}
+
+.nav{
+    /* border-top: 1px dotted gray; */
+}
+
+.main{
+    /* border-top: 1px dotted gray; */
+    /* 패딩이없으므로 바로 컨텐츠 밖에 생기는 선! 그래서 네비에 걸어줌 */
+    /* 또는 패딩 탑을 여기에 걸어야... */
+    width: 150px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+.main > li{
+    margin-bottom: 10px;
+    
+}
+.main > li > a{
+    display: block;
+    /* width: 95%; */
+    height: 40px;
+    line-height: 40px;
+    /* text-align: center; */
+    text-indent: 20px; /* 들여쓰기 */
+    background-color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    border: 2px solid gray;
+    border-radius: 10px 10px 0 0;
+}
+.main > li:hover > a{
+    background-color: #c7c7c7;
+}
+
+.sub{display: none;}
+.sub li{}
+.sub li a{
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-indent: 20px;
+    background-color: #f1f1f1;
+}
+.sub li a:hover{
+    background-color: #c7c7c7;
+}
+
+.contents{
+    width: 400px;
+    height: 600px;
+    /* background-color: #cacaca; */
+}
+.notice{
+    /* 노티스영역의 박스 */
+    width: 100%;
+    height: 250px;
+    /* background-color: #cac1c1; */
+    padding: 20px;
+}
+.notice h2{
+    font-size: 14px;
+    width: 100px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 10px 10px 0 0 ;
+    background-color: #f1f1f1;
+}
+.notice ul{
+    border-top: 5px solid darkblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* 250 - 210 - 35(h2) - 5(보더) */
+    height: 170px;
+    padding-top: 30px;
+}
+.notice ul li{
+    display: flex;
+    padding: 0 10px;
+    border-bottom: 1px dotted darkblue;
+}
+.notice ul li:hover{
+    background-color: rgba(0,0,0,.5);
+    color: #fff;
+}
+.notice ul li a{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 75%;
+}
+.notice ul li span{
+    width: 25%;
+    text-align: right;
+}
+
+
+
+
+.gallery{
+    width: 100%;
+    height: 250px;
+    /* background-color: #cac1c1; */
+    padding: 20px;
+}
+.gallery h2{
+    font-size: 14px;
+    width: 100px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 10px 10px 0 0 ;
+    background-color: #f1f1f1;
+    
+}
+.gallery ul{
+    border-top: 5px solid darkblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* 250 - 210 - 35(h2) - 5(보더) */
+    height: 170px;
+    text-align: center;
+    padding-top: 20px;
+}
+.gallery ul li{
+    
+}
+.gallery ul li a{
+    font-weight: bold;
+}
+.gallery ul li a img{
+    width: 140px;
+    /* 이미지는 인라인구조인데 위드높이가 먹히는 유일한 구조물,, */
+}
+.gallery ul li span{
+    display: block;
+    text-transform: uppercase;
+}
+
+.link{
+    width: 100%;
+    height: 100px;
+    /* background-color: #a09a9a; */
+}
+.link ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+}
+.link ul li{
+
+}
+.link ul li a{
+    display: block;
+    overflow: hidden;
+}
+.link ul li a img{
+    /* 사진 재단 없이 사이즈가 안맞으면 이미지태그에 위드높이 걸어서 줄여주기 가능 */
+    border-radius: 10px;
+    border: 3px solid brown;
+
+}
+.link ul li a span{
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.slide_img{
+    width: calc(100% - 200px - 400px);
+    height: 600px;
+    /* background-color: #fff2f2; */
+    overflow: hidden;
+    position: relative;
+}
+.top_move{
+    position: absolute;
+    /* 앱솔되면 위드높이 사라지므로 지정해주기 꼭 */
+    width: 100%;
+    /* height: 100%; */
+    /* height: 1800px; */
+    /* 높이는 상속이 안됨 */
+    left: 0;  top: 0;
+    background-color: #8f8787;
+}
+.top_move li{
+    width: 100%;
+    height: 600px;
+    /* 이미지 3개 높이 고려.....*/
+    
+}
+
+.top_move li a{
+    display: block;
+    width: 100%;
+    height: 600px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 30px;
+    color: white;
+    text-shadow: 5px 5px 2px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top_move li:nth-child(1) a{ background-image: url("/완성/slide01.jpg");}
+.top_move li:nth-child(2) a{ background-image: url("/완성/slide02.jpg");}
+.top_move li:nth-child(3) a{ background-image: url("/완성/slide03.jpg");}
+
+
+.footer{
+    width: 100%;
+    height: 100px;
+    background-color: #a0a0a0;
+    display: flex;
+}
+.f_logo{
+    width: 200px;
+    height: 100px;
+    background-color: #bdbdbd;
+}
+.f_logo{
+    width: 200px;
+    height: 100px;
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.copy{
+    width: calc(100% - 200px - 300px);
+    height: 100px;
+    background-color: #8f8787;
+
+    text-align: center;
+    line-height: 100px;
+    font-weight: 600;
+    font-size: 12px;
+}
+.family{
+    width: 300px;
+    height: 100px;
+    background-color: #a0a0a0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.family select{ width: 200px; height: 50px;}
+
+.modal{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,.5);
+    z-index: 100;
+    position: absolute;
+    left: 0; top: 0;
+}
+.pop{
+    width: 500px;
+    height: 400px;
+    z-index: 101;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 10px double hotpink;
+    padding: 20px;
+    position: absolute;
+}
+    
+.pop h3{
+    text-align: center;
+    line-height: 50px;
+    border-bottom: 5px double hotpink;
+    margin-bottom: 20px;
+}
+.pop p{
+    line-height: 2;
+    text-align: justify;
+}
+.pop p::first-letter{}
+
+.pop button{
+
+}
